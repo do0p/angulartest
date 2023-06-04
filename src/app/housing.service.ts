@@ -6,7 +6,7 @@ import { HousingLocation } from './housinglocation';
 })
 export class HousingService {
 
-  url = 'https://t8qwr7rqia.execute-api.eu-central-1.amazonaws.com/default/getHousings';
+  url = 'https://t8qwr7rqia.execute-api.eu-central-1.amazonaws.com/default/getHousings?TableName=housings';
 
   constructor() { }
 
