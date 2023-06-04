@@ -6,13 +6,14 @@ import { HousingLocation } from './housinglocation';
 })
 export class HousingService {
 
-  url = 'http://localhost:3000/locations';
+  url = 'https://t8qwr7rqia.execute-api.eu-central-1.amazonaws.com/default/getHousings';
 
   constructor() { }
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
     const data = await fetch(this.url);
-    return await data.json() ?? [];
+    const json = await data.json();
+    return json.items ?? [];
   }
   
   async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
